@@ -1,12 +1,14 @@
-.campo-texto{
+.lista-suspensa{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    border: none;
 }
 
-input{
+.lista-suspensa select{
     margin: 10px;
     border-radius: 20px;
     padding: 20px;
     border: none;
+
 }
