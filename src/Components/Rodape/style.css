@@ -1,0 +1,27 @@
+.rodape{
+    background-color: #6278F7;
+    background-image: url('C:/Users/Gabriela/organo/public/imagens/fundo.png');
+    display: flex;
+    justify-content: space-around;
+    padding: 64px;
+    align-items: center;
+}
+
+.rodape .socialMediaLogo{
+    width: 16px;
+    height: 16px;
+    padding: 32px;
+
+}
+
+.rodape .logo{
+    width: 128px;
+    height: 64px;
+
+}
+
+.rodape h4{
+    color: #FFFFFF;
+    font-weight: 100;
+    padding: 0 16px;
+}

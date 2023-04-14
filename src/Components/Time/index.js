@@ -11,7 +11,7 @@ const css = {backgroundColor: props.corSecundaria}
         style={css}>
             <h3 style={{borderBottomColor: props.corPrimaria}}> {props.nome} </h3>
             <div className='colaboradores'>
-            {props.colaboradores.map(colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}></Colaborador>)}
+            {props.colaboradores.map(colaborador => <Colaborador corDeFundo={props.corPrimaria} key={colaborador.nome} nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}></Colaborador>)}
         
             </div>
             </section>
