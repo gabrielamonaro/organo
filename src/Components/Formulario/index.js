@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 
 function Formulario (props)  {
-    const times  = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
 function aoSalvar(evento)
 {
     evento.preventDefault()
@@ -65,7 +55,7 @@ function aoSalvar(evento)
 
             <ListaSuspensa 
             label="Time" 
-            itens={times}
+            itens={props.times}
             valor = {time}
             aoAlterado = {setTime}
             >
