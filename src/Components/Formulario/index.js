@@ -16,6 +16,10 @@ function aoSalvar(evento)
         imagem, 
         time
     })
+    setNome('')
+    setImagem('')
+    setCargo('')
+    setTime('')
     // console.log(`Form foi submetido =>  ${nome} + ${cargo}  ${imagem} ${time}`)
 }
 
