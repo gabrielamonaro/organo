@@ -1,6 +1,6 @@
 import './style.css'
 
-function CampoTexto (props)
+function Campo (props)
 {
     const mostra = (evento) =>
     {
@@ -8,9 +8,10 @@ function CampoTexto (props)
     }
 
     return (
-        <div className='campo-texto'>
+        <div className={`campo-${props.type}`}>
             <label>{props.label}</label>
             <input 
+            type={props.type}
             value={props.valor}
             onChange={mostra}
             placeholder={props.placeholder}
@@ -21,4 +22,4 @@ function CampoTexto (props)
     )
 }
 
-export default CampoTexto
+export default Campo

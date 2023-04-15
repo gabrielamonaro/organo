@@ -1,7 +1,14 @@
-.campo-texto{
+.campo-texto .campo-color{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+}
+
+.campo-color input{
+padding: 0;
+width: 100px;
+height: 30px;
+
 }
 
 input{

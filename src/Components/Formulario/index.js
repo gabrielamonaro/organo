@@ -1,5 +1,5 @@
 import './style.css'
-import CampoTexto from '../CampoTexto';
+import Campo from '../Campo';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
@@ -48,28 +48,28 @@ function cadastrarTime(evento)
         <section className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o card do colaborador</h2>
-            <CampoTexto 
+            <Campo 
             obrigatorio={true} 
             label="Nome"  
             valor = {nome}
             aoAlterado = {setNome}
             placeholder="Digite seu nome">
-            </CampoTexto>
+            </Campo>
 
-            <CampoTexto  
+            <Campo  
             obrigatorio={true} 
             label="Cargo" 
             valor = {cargo}
             aoAlterado = {setCargo}
             placeholder="Digite seu cargo">
-            </CampoTexto>
+            </Campo>
 
-            <CampoTexto 
+            <Campo 
             label="Imagem" 
             valor = {imagem}
             aoAlterado = {setImagem}
             placeholder="Digite o endereço da imagem">
-            </CampoTexto>
+            </Campo>
 
             <ListaSuspensa 
             label="Time" 
@@ -84,21 +84,22 @@ function cadastrarTime(evento)
             
             <form onSubmit={cadastrarTime}>
                 <h2>Preencha os dados para criar um novo time</h2>
-            <CampoTexto 
+            <Campo 
             obrigatorio
             label="Nome"  
             valor = {nomeTime}
             aoAlterado = {setNomeTime}
             placeholder="Digite o nome do time">
-            </CampoTexto>
+            </Campo>
 
-            <CampoTexto  
+            <Campo  
             obrigatorio
             label="Cargo" 
+            type='color'
             valor = {corTime}
             aoAlterado = {setCorTime}
             placeholder="Digite a cor do time">
-            </CampoTexto>
+            </Campo>
 
             <Botao>Criar um novo time</Botao>
             </form>
