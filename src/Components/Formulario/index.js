@@ -16,7 +16,8 @@ function aoSalvar(evento)
         cargo, 
         imagem, 
         time, 
-        id: uuidv4()
+        id: uuidv4(),
+        favorito: false
     })
     setNome('')
     setImagem('')

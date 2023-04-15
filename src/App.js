@@ -9,7 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
 function App() {
 
   function deletarColaborador(id) {
-    console.log("Deletando colaboradores. \n 2.", id)
     setColaboradores(colaboradores.filter(colaborador => colaborador.id != id))
 
   }
@@ -27,6 +26,14 @@ function App() {
             return time;
       }))
 
+  }
+
+  function resolverFavorito(id)
+  {    
+    setColaboradores(colaboradores.map(colaborador => {
+      if(colaborador.id === id) colaborador.favorito = !colaborador.favorito;
+      return colaborador
+    }))
   }
 
   const [times, setTimes] = useState ([{
@@ -70,7 +77,6 @@ function App() {
   const aoNovoColaboradorAdicionado = (colaborador) =>
   {
     setColaboradores([...colaboradores, colaborador])
-    console.log(colaboradores)
   }
 
 
@@ -86,6 +92,7 @@ function App() {
 
       {times.map(time => 
       <Time 
+        aoFavoritar={resolverFavorito}
         key={time.nome}
         nome={time.nome} 
         cor={time.cor} 

@@ -1,7 +1,6 @@
 import Colaborador from '../Colaborador'
 import './style.css'
 import hexToRgba from 'hex-to-rgba';
-import { v4 as uuidv4 } from 'uuid';
 
 
 const Time = (props) => {
@@ -23,6 +22,7 @@ const css = {backgroundColor: hexToRgba(props.cor, '0.5')}
             <div className='colaboradores'>
             {props.colaboradores.map(colaborador => 
                 <Colaborador 
+                    aoFavoritar={props.aoFavoritar}
                     corDeFundo={props.cor} 
                     key={colaborador.nome} 
                     nome={colaborador.nome} 
@@ -30,6 +30,7 @@ const css = {backgroundColor: hexToRgba(props.cor, '0.5')}
                     id = {colaborador.id}
                     imagem={colaborador.imagem}
                     aoDeletar={props.aoDeletar}
+                    favorito={colaborador.favorito}
                     >
                 </Colaborador>)}
         
