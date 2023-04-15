@@ -3,6 +3,7 @@ import CampoTexto from '../CampoTexto';
 import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 
 function Formulario (props)  {
@@ -14,7 +15,8 @@ function aoSalvar(evento)
         nome,
         cargo, 
         imagem, 
-        time
+        time, 
+        id: uuidv4()
     })
     setNome('')
     setImagem('')
@@ -23,12 +25,24 @@ function aoSalvar(evento)
     // console.log(`Form foi submetido =>  ${nome} + ${cargo}  ${imagem} ${time}`)
 }
 
+function cadastrarTime(evento)
+{
+    evento.preventDefault()
+    props.cadastrarTime({
+        nome: nomeTime, 
+        cor: corTime
+    });
+}
+
 
     const [nome, setNome] = useState('Nome')
     const [cargo, setCargo] = useState('Cargo')
     const [imagem, setImagem] = useState('Imagem')
 
     const [time, setTime] = useState('Time')
+
+    const [nomeTime, setNomeTime] = useState('Nome')
+    const [corTime, setCorTime] = useState('Cor')
 
     return(
         <section className="formulario">
@@ -66,6 +80,27 @@ function aoSalvar(evento)
 
             </ListaSuspensa>
             <Botao>Criar Card</Botao>
+            </form>
+            
+            <form onSubmit={cadastrarTime}>
+                <h2>Preencha os dados para criar um novo time</h2>
+            <CampoTexto 
+            obrigatorio
+            label="Nome"  
+            valor = {nomeTime}
+            aoAlterado = {setNomeTime}
+            placeholder="Digite o nome do time">
+            </CampoTexto>
+
+            <CampoTexto  
+            obrigatorio
+            label="Cargo" 
+            valor = {corTime}
+            aoAlterado = {setCorTime}
+            placeholder="Digite a cor do time">
+            </CampoTexto>
+
+            <Botao>Criar um novo time</Botao>
             </form>
         </section>
     )

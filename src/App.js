@@ -8,8 +8,15 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const deletarColaborador = () => {
-    console.log("Deletando colaborador")
+  function deletarColaborador(id) {
+    console.log("Deletando colaboradores. \n 2.", id)
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id != id))
+
+  }
+  
+  function cadastrarTime(novoTime)
+  {
+    setTimes([ ...times, {...novoTime, id: uuidv4()}])
   }
 
   const mudarCor = (cor, id) => {
@@ -66,10 +73,13 @@ function App() {
     console.log(colaboradores)
   }
 
+
+
   return (
     <div className="App">
       <Banner></Banner>
       <Formulario
+      cadastrarTime={cadastrarTime}
       times={times.map(time => time.nome)}
       aoColaboradorCadastrado = {colaborador => aoNovoColaboradorAdicionado(colaborador)}
       ></Formulario>

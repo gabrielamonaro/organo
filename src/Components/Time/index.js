@@ -1,6 +1,8 @@
 import Colaborador from '../Colaborador'
 import './style.css'
 import hexToRgba from 'hex-to-rgba';
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Time = (props) => {
 
@@ -25,6 +27,7 @@ const css = {backgroundColor: hexToRgba(props.cor, '0.5')}
                     key={colaborador.nome} 
                     nome={colaborador.nome} 
                     cargo={colaborador.cargo} 
+                    id = {colaborador.id}
                     imagem={colaborador.imagem}
                     aoDeletar={props.aoDeletar}
                     >
